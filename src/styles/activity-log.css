@@ -1,0 +1,152 @@
+.activity-log-page { padding-bottom: 24px; }
+.activity-stats-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-bottom: 16px;
+}
+
+/* Filter Controls Panel */
+.log-control-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 18px;
+  margin-bottom: 15px;
+  gap: 16px;
+}
+.log-filter-tabs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.filter-tab {
+  height: 28px;
+  padding: 0 11px;
+  border-radius: 4px;
+  border: 1px solid #dce4e3;
+  background: #fff;
+  color: #607377;
+  font-size: 10px;
+  font-weight: 600;
+  transition: all .15s;
+}
+.filter-tab:hover {
+  background: #f4f8f7;
+  color: #2b3e42;
+  border-color: #bcd0cc;
+}
+.filter-tab.active {
+  background: #176f66;
+  border-color: #176f66;
+  color: #fff;
+}
+
+.log-search-wrap input {
+  height: 30px;
+  width: 210px;
+  border: 1px solid #dce4e3;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 10px;
+  color: #314449;
+  outline: none;
+}
+.log-search-wrap input:focus {
+  border-color: #6fb2a6;
+  box-shadow: 0 0 0 2px #e6f3f0;
+}
+
+/* Activity Table */
+.log-table-panel { overflow: hidden; }
+.activity-table-wrap { overflow-x: auto; }
+.activity-table { width: 100%; border-collapse: collapse; }
+.activity-table th {
+  height: 32px;
+  padding: 0 16px;
+  text-align: left;
+  color: #9ba7aa;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  background: #fbfdfc;
+  border-bottom: 1px solid #edf0f1;
+}
+.activity-table td {
+  padding: 10px 16px;
+  border-top: 1px solid #f0f2f2;
+  font-size: 10px;
+  color: #617377;
+  vertical-align: middle;
+}
+.log-time-cell strong {
+  display: block;
+  font: 700 10px "DM Mono", monospace;
+  color: #3b4e53;
+}
+.log-time-cell small {
+  display: block;
+  font-size: 8px;
+  color: #9aa8ab;
+  margin-top: 2px;
+}
+
+.log-kind-tag {
+  display: inline-block;
+  padding: 3px 7px;
+  border-radius: 4px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .4px;
+}
+.log-kind-allocated { background: #eaf5f2; color: #1e796e; }
+.log-kind-released { background: #fbf3eb; color: #b77634; }
+.log-kind-merged { background: #edf6f9; color: #1f7b90; }
+.log-kind-compacted { background: #f3eef9; color: #7835b3; }
+.log-kind-blocked { background: #fbefed; color: #b54737; }
+.log-kind-queued { background: #f1f4f5; color: #5a6e72; }
+.log-kind-policy { background: #f4eef9; color: #7f3cb5; }
+.log-kind-system { background: #f1f4f5; color: #697c80; }
+
+.log-pid-cell .process-badge {
+  width: 24px;
+  height: 24px;
+  font-size: 9px;
+}
+.log-detail-cell strong {
+  display: block;
+  font: 700 11px "Manrope", sans-serif;
+  color: #2b3f44;
+  margin-bottom: 2px;
+}
+.log-detail-cell p {
+  color: #728387;
+  font-size: 9px;
+  line-height: 1.45;
+}
+
+.log-empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #8c9b9e;
+}
+.log-empty-state .empty-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f1f4f5;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 10px;
+  font-size: 15px;
+  color: #728488;
+}
+.log-empty-state strong {
+  display: block;
+  font: 700 12px "Manrope", sans-serif;
+  color: #314449;
+  margin-bottom: 3px;
+}
+.log-empty-state p {
+  font-size: 9px;
+  color: #8e9e9f;
+}

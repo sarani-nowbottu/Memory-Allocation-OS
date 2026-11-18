@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <title>MemCraft - Memory Allocation Simulator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles/shared.css">
+    <link rel="stylesheet" href="src/styles/overview.css">
+    <link rel="stylesheet" href="src/styles/simulator.css">
+    <link rel="stylesheet" href="src/styles/process-queue.css">
+    <link rel="stylesheet" href="src/styles/comparison.css">
+    <link rel="stylesheet" href="src/styles/activity-log.css">
+    <link rel="stylesheet" href="src/styles/responsive.css">
+    <link rel="stylesheet" href="src/styles/theme.css">
+    <script>
+      (function() {
+        try {
+          var t = localStorage.getItem('memcraft-theme') || localStorage.getItem('memlab-theme');
+          if (t === 'dark' || (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+          } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#overview" aria-label="MemCraft home">
+          <span class="brand-mark"><span></span><span></span><span></span></span>
+          <span>Mem<span class="brand-craft">Craft</span></span>
+        </a>
+        <div class="workspace-label">WORKSPACE</div>
+        <nav class="side-nav" aria-label="Main navigation">
+          <a class="nav-link" href="#overview" aria-current="page"><span class="nav-icon grid-icon"></span>Overview</a>
+          <a class="nav-link" href="#simulator"><span class="nav-icon memory-icon"></span>Memory simulator</a>
+          <a class="nav-link" href="#queue"><span class="nav-icon queue-icon"></span>Process queue</a>
+          <a class="nav-link" href="#comparison"><span class="nav-icon compare-icon"></span>Algorithm comparison</a>
+          <a class="nav-link" href="#activity"><span class="nav-icon log-icon"></span>Activity log</a>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="side-note">
+            <span class="note-indicator"></span>
+            <div><strong>Simulation ready</strong><small>Local session · 1,024 MB</small></div>
+          </div>
+          <div class="sidebar-foot">OPERATING SYSTEM SIMULATOR</div>
+        </div>
+      </aside>
+      <main class="main-content">
+        <header class="topbar">
+          <div class="breadcrumb"><strong>OVERVIEW</strong></div>
+          <div class="topbar-right">
+            <button class="theme-toggle" id="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Toggle dark and light mode" title="Switch between dark and light mode">
+              <span class="theme-switch-pill">
+                <span class="theme-switch-icon light-icon" aria-hidden="true">☀️</span>
+                <span class="theme-switch-icon dark-icon" aria-hidden="true">🌙</span>
+              </span>
+              <span class="theme-label" id="theme-label">Light</span>
+            </button>
+            <span class="live-status"><span></span> SIMULATOR ONLINE</span>
+            <div class="avatar" aria-label="MemCraft workspace">MC</div>
+          </div>
+        </header>
+        <div id="page-container" aria-live="polite"></div>
+        <footer class="page-footer">
+          <span>OPERATING SYSTEM MEMORY MANAGEMENT SIMULATOR</span>
+          <span>FIRST FIT · NEXT FIT · BEST FIT · WORST FIT</span>
+        </footer>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
